@@ -1,9 +1,6 @@
 import React from 'react';
 
-
 import { Show } from './Show';
-
-
 
 const Shows = ({ shows }) => {
 

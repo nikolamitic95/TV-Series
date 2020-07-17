@@ -57,58 +57,56 @@ class InfoPage extends React.Component {
                     </Col>
                     <Col lg={4}>
                         <Row>
-                            <Col lg={12}>
-                                <h4>SEASONS ({this.state.seasons.length})</h4>
-                                <ul className={style.list}>
-                                    <Seasons seasons={this.state.seasons} />
-                                </ul>
-                                {this.state.seasons.length > 5 &&
+                            {this.state.seasons &&
+                                <Col lg={12}>
+                                    <h4>SEASONS ({this.state.seasons.length})</h4>
+                                    <ul className={style.list}>
+                                        <Seasons seasons={this.state.seasons} />
+                                    </ul>
                                     <ul>
                                         <Link to={`/info/seasons/${this.props.match.params.id}`}>
-                                            <li className={style.full}> . . . see Full Seasons</li>
+                                            <li className={style.full}> . . . click for season details</li>
                                         </Link>
                                     </ul>
-                                }
-                            </Col>
-                            <Col lg={12}>
-                                <h4>CAST ({this.state.cast.length})</h4>
-                                <ul className={style.list}>
-                                    <Persons cast={this.state.cast} />
-                                </ul>
-                                {this.state.cast.length > 5 &&
+                                </Col>
+                            }
+                            {this.state.cast &&
+                                <Col lg={12}>
+                                    <h4>CAST ({this.state.cast.length})</h4>
+                                    <ul className={style.list}>
+                                        <Persons cast={this.state.cast} />
+                                    </ul>
                                     <ul>
                                         <Link to={`/info/cast/${this.props.match.params.id}`}>
-                                            <li className={style.full}> . . . see Full Cast</li>
+                                            <li className={style.full}> . . . click for cast details</li>
                                         </Link>
                                     </ul>
-                                }
-                            </Col>
-                            <Col lg={12}>
-                                <h4>CREW ({this.state.crew.length})</h4>
-                                <ul className={style.list}>
-                                    <CrewPersons crew={this.state.crew} />
-                                </ul>
-                                {this.state.crew.length > 5 &&
+                                </Col>
+                            }
+                            {this.state.crew &&
+                                <Col lg={12}>
+                                    <h4>CREW ({this.state.crew.length})</h4>
+                                    <ul className={style.list}>
+                                        <CrewPersons crew={this.state.crew} />
+                                    </ul>
                                     <ul>
                                         <Link to={`/info/crew/${this.props.match.params.id}`}>
-                                            <li className={style.full}> . . . see Full Crew</li>
+                                            <li className={style.full}> . . . click for crew details</li>
                                         </Link>
                                     </ul>
-                                }
-                            </Col>
+                                </Col>
+                            }
                             {this.state.akas &&
                                 <Col lg={12}>
                                     <h4>AKA's ({this.state.akas.length})</h4>
                                     <ul className={style.list}>
                                         <Akas akas={this.state.akas} />
                                     </ul>
-                                    {this.state.akas.length > 5 &&
-                                        <ul>
-                                            <Link to={`/info/akas/${this.props.match.params.id}`}>
-                                                <li className={style.full}> . . . see Full Aka's</li>
-                                            </Link>
-                                        </ul>
-                                    }
+                                    <ul>
+                                        <Link to={`/info/akas/${this.props.match.params.id}`}>
+                                            <li className={style.full}> . . .  click for aka's details</li>
+                                        </Link>
+                                    </ul>
                                 </Col>
                             }
                         </Row>

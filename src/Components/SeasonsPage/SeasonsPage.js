@@ -1,6 +1,10 @@
 import React from 'react';
 
+import style from './SeasonsPage.module.css';
+
 import { seasonsService } from '../../services/seasonsService';
+import { Container, Row, Col } from 'react-bootstrap';
+import { FullSeasons } from './FullSeasons/FullSeasons';
 
 class SeasonsPage extends React.Component {
     constructor(props) {
@@ -20,7 +24,14 @@ class SeasonsPage extends React.Component {
 
     render() {
         return (
-            <div><h1>bla</h1></div>
+            <Container>
+                <Row>
+                    <Col lg={12}><h3 className={style.title}>SEASONS ({this.state.seasons.length})</h3></Col>
+                </Row>
+                <Row>
+                    <FullSeasons seasons={this.state.seasons} />
+                </Row>
+            </Container>
         )
     }
 }
