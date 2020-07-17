@@ -5,9 +5,13 @@ import style from './InfoPage.module.css';
 import { showService } from '../../services/showService';
 import { seasonsService } from '../../services/seasonsService';
 import { castService } from '../../services/castService';
+import { crewService } from '../../services/crewService';
+import { akaService } from '../../services/akaService';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Seasons } from './Seasons/Seasons';
 import { Persons } from './Cast/Persons';
+import { CrewPersons } from './Crew/CrewPersons';
+import { Akas } from './Akas/Akas';
 
 
 class InfoPage extends React.Component {
@@ -17,7 +21,9 @@ class InfoPage extends React.Component {
         this.state = {
             singleShow: [],
             seasons: [],
-            cast: []
+            cast: [],
+            crew: [],
+            akas: []
         }
     }
 
@@ -28,6 +34,10 @@ class InfoPage extends React.Component {
             .then(data => { this.setState({ seasons: data }) })
         castService.getCast(this.props.match.params.id)
             .then(data => { this.setState({ cast: data }) })
+        crewService.getCrew(this.props.match.params.id)
+            .then(data => { this.setState({ crew: data }) })
+        akaService.getAka(this.props.match.params.id)
+            .then(data => { this.setState({ akas: data }) })
     }
 
     render() {
@@ -54,6 +64,14 @@ class InfoPage extends React.Component {
                             <Col lg={12}>
                                 <h3>CAST</h3>
                                 <Persons cast={this.state.cast} />
+                            </Col>
+                            <Col lg={12}>
+                                <h3>CREW</h3>
+                                <CrewPersons crew={this.state.crew} />
+                            </Col>
+                            <Col lg={12}>
+                                <h3>AKA's</h3>
+                                <Akas akas={this.state.akas} />
                             </Col>
                         </Row>
                     </Col>
