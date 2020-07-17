@@ -9,7 +9,7 @@ const Header = () => {
         <Container fluid className="header">
             <Navbar variant="dark" bg="dark" expand="lg">
                 <Container>
-                    <Navbar.Brand href="http://localhost:3000/">BitShow</Navbar.Brand>
+                    <Navbar.Brand href="http://localhost:3000/">TV series</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">

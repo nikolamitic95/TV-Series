@@ -7,3 +7,12 @@
     margin-top: 10px;
     margin-bottom: 15px;
 }
+.img{
+    width: 100%;
+}
+.full{
+    list-style-type: none;
+}
+/* .list{
+    margin-bottom: 0px !important;
+} */

@@ -4,15 +4,14 @@ import { Season } from './Season';
 
 const Seasons = ({ seasons }) => {
     return (
-        <ul>
-            {seasons.map(sea=>(
-                <Season
-                    key={sea.id}
-                    premiereDate={sea.premiereDate}
-                    endDate={sea.endDate}
-                 />
-            ))}
-        </ul>
+
+        seasons.slice(0, 5).map(sea => (
+            <Season
+                premiereDate={sea.premiereDate}
+                endDate={sea.endDate}
+            />
+        ))
+
     )
 }
 

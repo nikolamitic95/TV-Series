@@ -4,14 +4,13 @@ import { Person } from './Person';
 
 const Persons = ({ cast }) => {
     return (
-        <ul>
-            {cast.map(cas => (
-                <Person
-                    key={cas.id}
-                    name={cas.name}
-                />
-            ))}
-        </ul>
+
+        cast.slice(0, 5).map(cas => (
+            <Person
+                name={cas.name}
+            />
+        ))
+
     )
 }
 
