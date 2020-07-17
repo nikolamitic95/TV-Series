@@ -1,0 +1,10 @@
+.footer {
+    height: 70px !important;
+    background-color: #343a40;
+    color: #fff;
+}
+
+.title {
+    text-align: center;
+    padding-top: 22px;
+}
