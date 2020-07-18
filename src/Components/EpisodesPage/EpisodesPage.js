@@ -1,30 +1,31 @@
 import React from 'react';
 
-import style from './SeasonsPage.module.css';
+import style from './EpisodesPage.module.css';
 
-import { seasonsService } from '../../services/seasonsService';
-import { Container, Row, Col } from 'react-bootstrap';
+import { episodesService } from '../../services/episodeService'
 import { Header } from '../Header/Header';
-import { FullSeasons } from './FullSeasons/FullSeasons';
+import { Container, Row, Col } from 'react-bootstrap';
 import { Loading } from '../Loading/Loading';
+import { Episodes } from './Episodes/Episodes';
 
-class SeasonsPage extends React.Component {
+class EpisodesPage extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            seasons: [],
+            episodes: [],
             isLoading: false
         }
     }
 
     componentDidMount() {
         this.setState({ isLoading: true });
-        seasonsService.getSeasons(this.props.match.params.id)
-            .then(data => { this.setState({ seasons: data }) })
-
+        episodesService.getEpisodes(this.props.match.params.id)
+            .then(data => { this.setState({ episodes: data }) })
             .finally(() => this.setState({ isLoading: false }));
     }
+
+
 
     render() {
         return (
@@ -33,10 +34,10 @@ class SeasonsPage extends React.Component {
                 <Container>
                     <Row>
                         <Col lg={12} md={12} sm={12}> {this.state.isLoading && <Loading />} </Col>
-                        <Col lg={12}><h3 className={style.title}>SEASONS ({this.state.seasons.length})</h3></Col>
+                        <Col lg={12}><h3 className={style.title}>Episodes ({this.state.episodes.length})</h3></Col>
                     </Row>
                     <Row>
-                        <FullSeasons seasons={this.state.seasons} />
+                        <Episodes episodes={this.state.episodes} />
                     </Row>
                 </Container>
             </>
@@ -44,4 +45,4 @@ class SeasonsPage extends React.Component {
     }
 }
 
-export { SeasonsPage }
+export { EpisodesPage }

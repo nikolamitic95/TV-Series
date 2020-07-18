@@ -7,6 +7,7 @@ const FullSeasons = ({ seasons }) => {
         seasons.map(season => (
             <SeasonCard
                 key={season.id}
+                id={season.id}
                 premiereDate={season.premiereDate}
                 endDate={season.endDate}
                 image={season.image}

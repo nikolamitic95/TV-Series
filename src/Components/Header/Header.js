@@ -1,23 +1,21 @@
 import React from 'react';
-import './Header.css';
+
+import style from './Header.module.css';
+
 import { Form, Navbar, FormControl, Nav, Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 
 
 const Header = () => {
     return (
-        <Container fluid className="header">
-            <Navbar variant="dark" bg="dark" expand="lg">
-                <Container>
-                    <Navbar.Brand href="http://localhost:3000/">TV series</Navbar.Brand>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="mr-auto">
-                        </Nav>
-                        <Form>
-                            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                        </Form>
-                    </Navbar.Collapse>
+        <Container fluid className={style.wrapper}>
+            <Navbar className={style.header} variant="dark" bg="dark" expand="lg">
+                <Container className={style.center}>
+                    <Link to='/'> <Navbar.Brand className={style.title} >TV series</Navbar.Brand> </Link>
+                    <Form className={style.form}>
+                        <FormControl type="text" placeholder="Search" />
+                    </Form>
                 </Container>
             </Navbar>
         </Container>
