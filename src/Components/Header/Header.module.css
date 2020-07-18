@@ -2,7 +2,7 @@
     padding: 0px !important;
 }
 .header{
-    height: 80px;
+    height: 130px;
 }
 .title{
     font-size: 50px !important;
@@ -11,10 +11,29 @@
     .header {
       height: 155px;
     }
-    .center{
+    .content{
         justify-content: center !important;
     }
     .form{
         width: 100%;
     }
+  }
+  .content{
+      display: block !important;
+      text-align: -webkit-center;
+  }
+  .title{
+      color: #fff;
+      text-align: center;
+      padding-top: 10px;
+
+  }
+  .form{
+      width: 60% !important;
+  }
+  .position{
+    position: absolute;
+    left: 25%;
+    z-index: 1;
+    width: 50%;
   }

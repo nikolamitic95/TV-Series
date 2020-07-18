@@ -4,7 +4,6 @@ import './App.css';
 
 import { HomePage } from './Components/HomePage/HomePage';
 import { InfoPage } from './Components/InfoPage/InfoPage';
-import { Header } from './Components/Header/Header';
 import { Footer } from './Components/Footer/Footer';
 import { Switch, Route } from 'react-router-dom';
 import { SeasonsPage } from './Components/SeasonsPage/SeasonsPage';
