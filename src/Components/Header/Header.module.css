@@ -28,6 +28,9 @@
       padding-top: 10px;
 
   }
+  .linkTitle:hover{
+    text-decoration: none;
+  }
   .form{
       width: 60% !important;
   }
@@ -36,4 +39,24 @@
     left: 25%;
     z-index: 1;
     width: 50%;
+  }
+  .linkSearch{
+      color: black;
+  }
+  .linkSearch:hover{
+      text-decoration: none;
+  }
+  .card{
+      border-bottom: none !important;
+      border-radius: none !important;
+      text-align: start;
+  }
+  .body{
+      display: flex;
+  }
+  .img{
+      margin-right: 30px;
+  }
+  .name{
+      padding-top: 10px;
   }

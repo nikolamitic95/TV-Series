@@ -48,23 +48,27 @@ class InfoPage extends React.Component {
     }
 
     render() {
-        
+
         return (
             <>
                 <Header />
                 <Container>
                     <Row>
-                    <Col lg={12} md={12} sm={12}> {this.state.isLoading && <Loading />} </Col>
-                        <Col lg={12} md={12} sm={12}>
-                            <h1 className={style.title}>
-                                {this.state.singleShow.name}
-                            </h1>
-                        </Col>
+                        <Col lg={12} md={12} sm={12}> {this.state.isLoading && <Loading />} </Col>
+                        {this.state.singleShow &&
+                            <Col lg={12} md={12} sm={12}>
+                                <h1 className={style.title}>
+                                    {this.state.singleShow.name}
+                                </h1>
+                            </Col>
+                        }
                     </Row>
                     <Row>
-                        <Col lg={6}>
-                            <img className={style.img} src={this.state.singleShow.avatarInfo}></img>
-                        </Col>
+                        {this.state.singleShow &&
+                            <Col lg={6}>
+                                <img className={style.img} src={this.state.singleShow.avatarInfo}></img>
+                            </Col>
+                        }
                         <Col lg={4}>
                             <Row>
                                 {this.state.seasons &&
@@ -126,9 +130,11 @@ class InfoPage extends React.Component {
                         <Col lg={12}>
                             <h3 className={style.title1}>Show Details</h3>
                         </Col>
-                        <Col lg={12}>
-                            <p>{this.state.singleShow.summary}</p>
-                        </Col>
+                        {this.state.singleShow &&
+                            <Col lg={12}>
+                                <p>{this.state.singleShow.summary}</p>
+                            </Col>
+                        }
                     </Row>
                 </Container>
             </>
