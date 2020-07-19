@@ -1,6 +1,6 @@
 ## TV-Series
 
-TV Series is an application that allows you to search for existing TV series, take a closer look at the summary, information about the seasons, episods, actors, authors and the show's country. Data provided by tvmaze.com. Fully responsive.
+TV Series is an application that allows you to search for existing TV series, take a closer look at the summary, information about the seasons, episods, actors, authors and the show's country. Data provided by tvmaze.com. <br/> Fully responsive.
 
 DEMO:
 
