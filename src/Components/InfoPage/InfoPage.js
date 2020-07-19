@@ -33,6 +33,10 @@ class InfoPage extends React.Component {
 
     componentDidMount() {
         this.setState({ isLoading: true });
+        this.fetchInfoPage()
+    }
+
+    fetchInfoPage = () => {
         showService.getSingleShow(this.props.match.params.id)
             .then(data => { this.setState({ singleShow: data }) })
         seasonsService.getSeasons(this.props.match.params.id)
@@ -43,22 +47,12 @@ class InfoPage extends React.Component {
             .then(data => { this.setState({ crew: data }) })
         akaService.getAka(this.props.match.params.id)
             .then(data => { this.setState({ akas: data }) })
-
             .finally(() => this.setState({ isLoading: false }));
     }
 
     componentDidUpdate(prevProps) {
         if (this.props.match.params.id !== prevProps.match.params.id) {
-            showService.getSingleShow(this.props.match.params.id)
-                .then(data => { this.setState({ singleShow: data }) })
-            seasonsService.getSeasons(this.props.match.params.id)
-                .then(data => { this.setState({ seasons: data }) })
-            castService.getCast(this.props.match.params.id)
-                .then(data => { this.setState({ cast: data }) })
-            crewService.getCrew(this.props.match.params.id)
-                .then(data => { this.setState({ crew: data }) })
-            akaService.getAka(this.props.match.params.id)
-                .then(data => { this.setState({ akas: data }) })
+            this.fetchInfoPage()
         }
     }
 
@@ -87,10 +81,16 @@ class InfoPage extends React.Component {
                         {this.state.singleShow ?
                             <Col lg={6} md={6} sm={12}>
                                 <img className={style.img} src={this.state.singleShow.avatarInfo}></img>
+                                {this.state.singleShow.rating ?
+                                    <h5 className={style.rating}>Rating: {this.state.singleShow.rating}</h5>
+                                    : <h5 className={style.rating}>Rating: there is no rating for this series</h5>}
                             </Col>
                             :
                             <Col lg={6} md={6} sm={12}>
                                 <img className={style.img} src='../../image/no-image.jpg'></img>
+                                {this.state.singleShow.rating ?
+                                    <h5 className={style.rating}>Rating: {this.state.singleShow.rating}</h5>
+                                    : <h5 className={style.rating}>Rating: there is no rating for this series</h5>}
                             </Col>
                         }
                         <Col lg={6} md={6} sm={12}>

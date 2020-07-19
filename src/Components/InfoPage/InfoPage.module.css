@@ -4,7 +4,7 @@
     margin-bottom: 25px;
 }
 .title1{
-    margin-top: 15px;
+    margin-top: 5px;
     margin-bottom: 20px;
 }
 .img{
@@ -15,6 +15,10 @@
 }
 .summary{
     margin-bottom: 30px;
+}
+.rating{
+    margin-top: 5px;
+    color: brown;
 }
 @media only screen and (max-width: 768px) {
     .img {
