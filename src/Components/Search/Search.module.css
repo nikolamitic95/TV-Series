@@ -1,0 +1,74 @@
+.form {
+    width: 59% !important;
+}
+
+.myUl {
+    position: absolute;
+    left: 25%;
+    z-index: 1;
+    width: 50%;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.myLi {
+    display: flex;
+}
+
+.linkUl {
+    border: 1px solid #ddd;
+    margin-top: -1px;
+    background-color: #f6f6f6;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block;
+}
+.linkUl:hover {
+    background-color: #0366d6;
+    text-decoration: none;
+    color: #fff;
+}
+.img {
+    margin-right: 30px;
+}
+.name {
+    padding-top: 15px;
+}
+
+@media only screen and (max-width: 1072px) {
+    .img {
+        width: 10%;
+    }
+}
+@media only screen and (max-width: 774px) {
+    .img {
+        width: 13%;
+    }
+}
+@media only screen and (max-width: 598px) {
+    .img {
+        width: 16%;
+    }
+}
+@media only screen and (max-width: 498px) {
+    .img {
+        width: 20%;
+    }
+}
+@media only screen and (max-width: 592px){
+    .form{
+        width: 53% !important;
+    }
+}
+@media only screen and (max-width: 998px) and (min-width: 592){
+    .form{
+        width: 67% !important;
+    }
+}
+@media only screen and (max-width: 1350px) and (min-width: 1198){
+    .form{
+        width: 52% !important;
+    }
+}

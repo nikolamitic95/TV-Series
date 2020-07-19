@@ -1,3 +1,7 @@
+  body{
+    font-family: 'Red Rose', cursive;
+  }
+  
   .page-container{
     display: flex;
     flex-direction: column;
