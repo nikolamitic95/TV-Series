@@ -4,8 +4,8 @@
     margin-bottom: 25px;
 }
 .title1{
-    margin-top: 10px;
-    margin-bottom: 15px;
+    margin-top: 15px;
+    margin-bottom: 20px;
 }
 .img{
     width: 100%;
@@ -13,6 +13,14 @@
 .full{
     list-style-type: none;
 }
-/* .list{
-    margin-bottom: 0px !important;
-} */
+.summary{
+    margin-bottom: 30px;
+}
+@media only screen and (max-width: 768px) {
+    .img {
+        margin-bottom: 30px !important;
+    }
+    .centerSm {
+        text-align: center;
+    }
+}

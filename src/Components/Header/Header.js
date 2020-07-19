@@ -3,7 +3,7 @@ import React from 'react';
 import style from './Header.module.css';
 
 import { searchService } from '../../services/searchService';
-import { Form, Card, Navbar, FormControl, Nav, Container } from 'react-bootstrap';
+import { Navbar, FormControl, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 
@@ -33,6 +33,10 @@ class Header extends React.Component {
         })
     }
 
+    removeValue = () => {
+        this.setState({ value: '', results: [] })
+    }
+
 
     render() {
         const { value } = this.state
@@ -41,33 +45,33 @@ class Header extends React.Component {
                 <Navbar className={style.header} variant="dark" bg="dark" >
                     <Container className={style.content}>
                         <Link className={style.linkTitle} to='/'>
-                            <h1 className={style.title}><i class="fa fa-tv"></i> TV series</h1>
+                            <h1 className={style.title}><i className="fa fa-tv"></i> TV series</h1>
                         </Link>
-                        <div>
-                            <FormControl className={style.form}
-                                onChange={this.handleChange}
-                                type="text"
-                                value={value}
-                                placeholder="Search"
-                            />
-                            {this.state.results &&
 
-                                <div className={style.position}>
-                                    {this.state.results.map(res => (
-                                        <Link className={style.linkSearch} to={`/info/${res.show.id}`}>
-                                            <Card className={style.card}>
+                        <FormControl className={style.form}
+                            onChange={this.handleChange}
+                            type="text"
+                            value={value}
+                            placeholder="Search"
+                        />
+                        {this.state.results &&
 
-                                                <Card.Body className={style.body}>
-                                                    
-                                                    {/* <img className={style.img} src={res.show.image.original} width='5%' /> */}
-                                                    <p className={style.name}> {res.show.name}</p></Card.Body>
-                                            </Card>
-                                        </Link>
-                                    ))}
+                            <ul className={style.myUl}>
+                                {this.state.results.map(res => (
+                                    <Link className={style.linkUl} to={`/info/${res.show.id}`}>
+                                        <li onClick={this.removeValue} className={style.myLi}>
+                                            {res.show && res.show.image && res.show.image.medium ?
+                                                <img className={style.img} src={res.show.image.medium} width='7%' />
+                                                :
+                                                <img className={style.img} src='../../image/no-image.jpg' width='7%' />
+                                            }
+                                            <p className={style.name}> {res.show.name}</p>
+                                        </li>
+                                    </Link>
+                                ))}
+                            </ul>
+                        }
 
-                                </div>
-                            }
-                        </div>
                     </Container>
                 </Navbar>
             </Container>
