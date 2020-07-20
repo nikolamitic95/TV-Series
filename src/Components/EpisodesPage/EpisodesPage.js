@@ -34,10 +34,16 @@ class EpisodesPage extends React.Component {
                 <Container>
                     <Row>
                         <Col lg={12} md={12} sm={12}> {this.state.isLoading && <Loading />} </Col>
-                        <Col lg={12}><h3 className={style.title}>Episodes ({this.state.episodes.length})</h3></Col>
+                        {this.state.episodes &&
+                            <Col lg={12}><h3 className={style.title}>Episodes ({this.state.episodes.length})</h3></Col>
+                        }
                     </Row>
                     <Row>
-                        <Episodes episodes={this.state.episodes} />
+                        {this.state.episodes ?
+                            <Episodes episodes={this.state.episodes} />
+                            :
+                            <Col className={style.img} lg={12}> <img src='../../../image/not_found.png' /></Col>
+                        }
                     </Row>
                 </Container>
             </>

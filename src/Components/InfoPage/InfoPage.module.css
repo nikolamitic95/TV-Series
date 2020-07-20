@@ -20,6 +20,13 @@
     margin-top: 5px;
     color: brown;
 }
+.div{
+    margin-bottom: 120px;
+    
+}
+.span{
+    color: gray !important;
+}
 @media only screen and (max-width: 768px) {
     .rating {
         margin-bottom: 30px !important;

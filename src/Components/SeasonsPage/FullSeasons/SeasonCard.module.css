@@ -12,7 +12,11 @@
 }
 .date{
     font-weight: 700 !important;
+    font-size: 18px !important;
 }
 .link:hover{
     text-decoration: none;
+}
+.image{
+    height: 355px;
 }

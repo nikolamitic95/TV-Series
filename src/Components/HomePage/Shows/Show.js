@@ -11,7 +11,10 @@ const Show = ({ name, avatar, id }) => {
         <Col className={style.show} lg={3} md={6} sm={12}>
             <Link className={style.link} to={`/info/${id}`}>
                 <Card className={style.card} style={{ width: '100%' }}>
+                    {avatar ?
                     <Card.Img variant="top" src={avatar} alt={name} />
+                    :
+                    <Card.Img variant="top" src='../../image/no-image.jpg' alt={name} />}
                     <Card.Body>
                         <Card.Title className={style.name}>{name}</Card.Title>
                     </Card.Body>

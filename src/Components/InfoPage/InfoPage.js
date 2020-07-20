@@ -78,21 +78,17 @@ class InfoPage extends React.Component {
                         }
                     </Row>
                     <Row>
-                        {this.state.singleShow ?
-                            <Col lg={6} md={6} sm={12}>
+                        <Col lg={6} md={6} sm={12}>
+                            {this.state.singleShow.avatarInfo ?
                                 <img className={style.img} src={this.state.singleShow.avatarInfo}></img>
-                                {this.state.singleShow.rating ?
-                                    <h5 className={style.rating}>Rating: {this.state.singleShow.rating}</h5>
-                                    : <h5 className={style.rating}>Rating: there is no rating for this series</h5>}
-                            </Col>
-                            :
-                            <Col lg={6} md={6} sm={12}>
+                                :
                                 <img className={style.img} src='../../image/no-image.jpg'></img>
-                                {this.state.singleShow.rating ?
-                                    <h5 className={style.rating}>Rating: {this.state.singleShow.rating}</h5>
-                                    : <h5 className={style.rating}>Rating: there is no rating for this series</h5>}
-                            </Col>
-                        }
+                            }
+                            {this.state.singleShow.rating ?
+                                <h5 className={style.rating}>Rating: {this.state.singleShow.rating}</h5>
+                                :
+                                <h5 className={style.rating}>Rating: <span className={style.span}>there is no rating for this series</span></h5>}
+                        </Col>
                         <Col lg={6} md={6} sm={12}>
                             <Row>
                                 {this.state.seasons &&
@@ -101,11 +97,13 @@ class InfoPage extends React.Component {
                                         <ul className={style.list}>
                                             <Seasons seasons={this.state.seasons} />
                                         </ul>
-                                        <ul>
-                                            <Link to={`/info/seasons/${this.props.match.params.id}`}>
-                                                <li className={style.full}> . . . click for season details</li>
-                                            </Link>
-                                        </ul>
+                                        {this.state.seasons.length === 0 ? <div className={style.div}></div> :
+                                            <ul>
+                                                <Link to={`/info/seasons/${this.props.match.params.id}`}>
+                                                    <li className={style.full}> . . . click for season details</li>
+                                                </Link>
+                                            </ul>
+                                        }
                                     </Col>
                                 }
                                 {this.state.cast &&
@@ -114,11 +112,13 @@ class InfoPage extends React.Component {
                                         <ul className={style.list}>
                                             <Persons cast={this.state.cast} />
                                         </ul>
-                                        <ul>
-                                            <Link to={`/info/cast/${this.props.match.params.id}`}>
-                                                <li className={style.full}> . . . click for cast details</li>
-                                            </Link>
-                                        </ul>
+                                        {this.state.cast.length === 0 ? <div className={style.div}></div> :
+                                            <ul>
+                                                <Link to={`/info/cast/${this.props.match.params.id}`}>
+                                                    <li className={style.full}> . . . click for cast details</li>
+                                                </Link>
+                                            </ul>
+                                        }
                                     </Col>
                                 }
                                 {this.state.crew &&
@@ -127,11 +127,13 @@ class InfoPage extends React.Component {
                                         <ul className={style.list}>
                                             <CrewPersons crew={this.state.crew} />
                                         </ul>
-                                        <ul>
-                                            <Link to={`/info/crew/${this.props.match.params.id}`}>
-                                                <li className={style.full}> . . . click for crew details</li>
-                                            </Link>
-                                        </ul>
+                                        {this.state.crew.length === 0 ? <div className={style.div}></div> :
+                                            <ul>
+                                                <Link to={`/info/crew/${this.props.match.params.id}`}>
+                                                    <li className={style.full}> . . . click for crew details</li>
+                                                </Link>
+                                            </ul>
+                                        }
                                     </Col>
                                 }
                                 {this.state.akas &&
@@ -140,11 +142,13 @@ class InfoPage extends React.Component {
                                         <ul className={style.list}>
                                             <Akas akas={this.state.akas} />
                                         </ul>
-                                        <ul>
-                                            <Link to={`/info/akas/${this.props.match.params.id}`}>
-                                                <li className={style.full}> . . .  click for aka's details</li>
-                                            </Link>
-                                        </ul>
+                                        {this.state.akas.length === 0 ? <div></div> :
+                                            <ul>
+                                                <Link to={`/info/akas/${this.props.match.params.id}`}>
+                                                    <li className={style.full}> . . .  click for aka's details</li>
+                                                </Link>
+                                            </ul>
+                                        }
                                     </Col>
                                 }
                             </Row>

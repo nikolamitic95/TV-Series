@@ -46,11 +46,16 @@ class Search extends React.Component {
                     value={value}
                     placeholder="Search"
                 />
+
                 {
                     this.state.results &&
-
                     <ul className={style.myUl}>
+                        {
+                            this.state.results.length === 0 && value !== '' &&
+                            <li className={style.myLiResults}>no results...</li>
+                        }
                         {this.state.results.map(res => (
+
                             <Link className={style.linkUl} to={`/info/${res.show.id}`}>
                                 <li onClick={this.removeValue} className={style.myLi}>
                                     {res.show && res.show.image && res.show.image.medium ?
@@ -61,6 +66,7 @@ class Search extends React.Component {
                                     <p className={style.name}> {res.show.name}</p>
                                 </li>
                             </Link>
+
                         ))}
                     </ul>
                 }

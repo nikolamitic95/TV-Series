@@ -11,7 +11,11 @@ const SeasonCard = ({ premiereDate, endDate, episode, image, id }) => {
     return (
         <Col className={style.show} lg={3} md={6} sm={12}>
             <Card className={style.card} style={{ width: '100%' }}>
-                <Card.Img variant="top" src={image} />
+                {image ?
+                    <Card.Img variant="top" src={image} />
+                    :
+                    <Card.Img className={style.image} variant="top" src='../../image/no-image.jpg' />
+                }
                 <Card.Body>
                     <Card.Title className={style.date}>{premiereDate} - {endDate}</Card.Title>
                     <Link className={style.link} to={`/info/seasons/episodes/${id}`}>

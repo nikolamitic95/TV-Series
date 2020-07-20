@@ -1,9 +1,8 @@
 export class SeasonObj {
     constructor(seasonApi) {
-        this.id = seasonApi.id
-        this.premiereDate = seasonApi.premiereDate
-        this.endDate = seasonApi.endDate
-        this.episode = seasonApi.episodeOrder
-        this.image = seasonApi.image.medium
+        this.id = seasonApi === null ? '' : seasonApi.id
+        this.premiereDate = seasonApi.premiereDate === null ? 'no premiere date' : seasonApi.premiereDate
+        this.endDate = seasonApi.endDate === null ? 'no end date' : seasonApi.endDate
+        this.image = seasonApi.image === null ? '' : seasonApi.image.medium
     }
 }

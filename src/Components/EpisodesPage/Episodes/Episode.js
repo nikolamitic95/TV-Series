@@ -8,7 +8,11 @@ const Episode = ({ name, image }) => {
     return (
         <Col lg={3} md={6} sm={12}>
             <Card className={style.card} style={{ width: '100%' }}>
-                <Card.Img variant="top" src={image}  />
+                {image ?
+                    <Card.Img variant="top" src={image} />
+                    :
+                    <Card.Img className={style.img} variant="top" src='../../image/no-image.jpg' />
+                }
                 <Card.Body>
                     <Card.Title className={style.name}>{name}</Card.Title>
                 </Card.Body>
