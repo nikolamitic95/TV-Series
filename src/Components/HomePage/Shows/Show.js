@@ -1,6 +1,7 @@
 import React from 'react';
 
 import style from './Shows.module.css';
+import imageNo from '../../../image/image.jpg';
 
 import { Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -14,7 +15,7 @@ const Show = ({ name, avatar, id }) => {
                     {avatar ?
                     <Card.Img variant="top" src={avatar} alt={name} />
                     :
-                    <Card.Img variant="top" src='../../image/no-image.jpg' alt={name} />}
+                    <Card.Img variant="top" src={imageNo} alt={name} />}
                     <Card.Body>
                         <Card.Title className={style.name}>{name}</Card.Title>
                     </Card.Body>

@@ -1,7 +1,8 @@
 export class AkaObj {
     constructor(akaApi) {
-        this.name = akaApi.name === null ? 'no this name' : akaApi.name
-        this.country = akaApi.country === null ? 'no this country name' : akaApi.country.name
-        this.timezone = akaApi.country === null ? 'no timezone' : akaApi.country.timezone
+        this.id= akaApi.id ? akaApi.id : ''
+        this.name = akaApi.name ? akaApi.name : 'no this name'
+        this.country = akaApi.country ? akaApi.country.name : 'no this country name'
+        this.timezone = akaApi.country ? akaApi.country.timezone : 'no timezone'
     }
 }

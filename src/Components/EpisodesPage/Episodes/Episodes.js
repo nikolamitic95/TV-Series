@@ -6,6 +6,7 @@ const Episodes = ({ episodes }) => {
     return (
         episodes.map(episode => (
             <Episode
+                id={episode.id}
                 name={episode.name}
                 image={episode.image}
             />

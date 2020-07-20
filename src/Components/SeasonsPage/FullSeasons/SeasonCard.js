@@ -1,6 +1,7 @@
 import React from 'react';
 
 import style from './SeasonCard.module.css';
+import imageNo from '../../../image/image.jpg';
 
 import { Card, Col, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -14,7 +15,7 @@ const SeasonCard = ({ premiereDate, endDate, episode, image, id }) => {
                 {image ?
                     <Card.Img variant="top" src={image} />
                     :
-                    <Card.Img className={style.image} variant="top" src='../../image/no-image.jpg' />
+                    <Card.Img className={style.image} variant="top" src={imageNo} />
                 }
                 <Card.Body>
                     <Card.Title className={style.date}>{premiereDate} - {endDate}</Card.Title>

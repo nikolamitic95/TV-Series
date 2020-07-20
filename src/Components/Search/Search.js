@@ -1,6 +1,7 @@
 import React from 'react';
 
 import style from './Search.module.css';
+import image from '../../image/image.jpg';
 
 import { searchService } from '../../services/searchService';
 import { FormControl } from 'react-bootstrap';
@@ -56,17 +57,16 @@ class Search extends React.Component {
                         }
                         {this.state.results.map(res => (
 
-                            <Link className={style.linkUl} to={`/info/${res.show.id}`}>
+                            <Link className={style.linkUl} to={`/info/${res.show.id}`} key={res.show.id}>
                                 <li onClick={this.removeValue} className={style.myLi}>
                                     {res.show && res.show.image && res.show.image.medium ?
                                         <img className={style.img} src={res.show.image.medium} width='7%' />
                                         :
-                                        <img className={style.img} src='../../image/no-image.jpg' width='7%' />
+                                        <img className={style.img} src={image} width='7%' />
                                     }
                                     <p className={style.name}> {res.show.name}</p>
                                 </li>
                             </Link>
-
                         ))}
                     </ul>
                 }

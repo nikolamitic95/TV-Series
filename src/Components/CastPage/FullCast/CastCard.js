@@ -1,6 +1,7 @@
 import React from 'react';
 
 import style from './CastCard.module.css';
+import imageNo from '../../../image/image.jpg';
 
 import { Card, Col } from 'react-bootstrap';
 
@@ -11,7 +12,7 @@ const CastCard = ({ name, character, image }) => {
                 {image ?
                     <Card.Img variant="top" src={image} />
                     :
-                    <Card.Img className={style.img} variant="top" src='../../image/no-image.jpg' />
+                    <Card.Img className={style.img} variant="top" src={imageNo} />
                 }
                 <Card.Body>
                     <Card.Title className={style.name}>{name}</Card.Title>

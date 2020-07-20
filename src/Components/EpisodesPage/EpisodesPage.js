@@ -1,6 +1,8 @@
 import React from 'react';
 
 import style from './EpisodesPage.module.css';
+import imageNo from '../../image/image.jpg';
+import imageNot from '../../image/not_found.png'
 
 import { episodesService } from '../../services/episodeService'
 import { Header } from '../Header/Header';
@@ -25,8 +27,6 @@ class EpisodesPage extends React.Component {
             .finally(() => this.setState({ isLoading: false }));
     }
 
-
-
     render() {
         return (
             <>
@@ -34,15 +34,14 @@ class EpisodesPage extends React.Component {
                 <Container>
                     <Row>
                         <Col lg={12} md={12} sm={12}> {this.state.isLoading && <Loading />} </Col>
+
                         {this.state.episodes &&
                             <Col lg={12}><h3 className={style.title}>Episodes ({this.state.episodes.length})</h3></Col>
                         }
                     </Row>
                     <Row>
-                        {this.state.episodes ?
+                        {this.state.episodes &&
                             <Episodes episodes={this.state.episodes} />
-                            :
-                            <Col className={style.img} lg={12}> <img src='../../../image/not_found.png' /></Col>
                         }
                     </Row>
                 </Container>

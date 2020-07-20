@@ -1,12 +1,8 @@
-  body{
-    font-family: 'Red Rose', cursive;
-  }
-  
-  .page-container{
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
-.content{
-    flex: 1;
+.content {
+  flex: 1;
 }

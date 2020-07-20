@@ -1,6 +1,7 @@
 import React from 'react';
 
 import style from './InfoPage.module.css';
+import image from '../../image/image.jpg';
 
 import { showService } from '../../services/showService';
 import { seasonsService } from '../../services/seasonsService';
@@ -82,7 +83,7 @@ class InfoPage extends React.Component {
                             {this.state.singleShow.avatarInfo ?
                                 <img className={style.img} src={this.state.singleShow.avatarInfo}></img>
                                 :
-                                <img className={style.img} src='../../image/no-image.jpg'></img>
+                                <img className={style.img} src={image}></img>
                             }
                             {this.state.singleShow.rating ?
                                 <h5 className={style.rating}>Rating: {this.state.singleShow.rating}</h5>

@@ -1,7 +1,7 @@
 export class EpisodeObj {
     constructor(episodeApi) {
-        this.id = episodeApi === null ? '' : episodeApi.id
-        this.name = episodeApi.name === null || '' ? 'no this episode name' : episodeApi.name
-        this.image = episodeApi.image === null ? '' : episodeApi.image.medium
+        this.id = episodeApi ? episodeApi.id : ''
+        this.name = episodeApi.name ? episodeApi.name : 'no this episode name'
+        this.image = episodeApi.image ? episodeApi.image.medium : ''
     }
 }

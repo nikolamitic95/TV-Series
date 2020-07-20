@@ -7,6 +7,7 @@ const Persons = ({ cast }) => {
 
         cast.slice(0, 5).map(cas => (
             <Person
+                key={cas.id}
                 name={cas.name}
             />
         ))

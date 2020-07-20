@@ -7,11 +7,11 @@ const Seasons = ({ seasons }) => {
 
         seasons.slice(0, 5).map(sea => (
             <Season
+                key={sea.id}
                 premiereDate={sea.premiereDate}
                 endDate={sea.endDate}
             />
         ))
-
     )
 }
 
